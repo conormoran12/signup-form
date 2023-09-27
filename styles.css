@@ -1,16 +1,28 @@
+:root {
+    --margin-form: 35px;
+}
+
+@font-face {
+    font-family: Norse-Bold;
+    src: url("Norse-Bold.otf") format("opentype");
+}
+
 body {
     margin: 0;
     padding: 0;
     height: 100%;
     min-height: 100vh;
     max-height: 100vh;
+    background-color: #f9fafb;
     display: flex;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 img {
     object-fit: cover;
     height: 100%;
     width: 100%;
+    min-width: 200px;
 }
 
 .sidebar {
@@ -18,6 +30,7 @@ img {
     flex: 3 0 0;
     background-color: green;
     overflow: hidden;
+    min-width: 600px;
 }
 
 .signup-form-container {
@@ -25,12 +38,17 @@ img {
     flex-direction: column;
     flex-grow: 2;
     justify-content: center;
+    gap: 25px;
+    background-color: #f9fafb;
 }
 
 
 .form-container {
     display: flex;
-    background-color: grey;
+    background-color: #ffffff;
+    padding: 20px 0;
+    align-items: center;
+    box-shadow: 0px 5px 3.5px #d0d0d0, 0px -5px 3.5px #d0d0d0;
 }
 
 fieldset {
@@ -38,20 +56,133 @@ fieldset {
     flex-direction: column;
     align-items: start;
     flex-wrap: wrap;
-    height: 175px;
+    height: 200px;
     width: 750px;
     gap: 10px;
-    padding: 20px;
+    padding: var(--margin-form);
+    border: none;
 }
 
 .button-container {
     display: flex;
-    justify-content: center;
+    justify-content: start;
 }
 
 .submit {
     display: flex;
-    height: 20px;
-    width: 50px;
+    padding: 15px 45px;
     justify-content: center;
+    background-color: #596d48;
+    border: none;
+    align-items: center;
+    font-size: 1rem;
+    color: #f7f9f7;
+    border-radius: 7.5px;
+    font-weight: 700;
+    margin-left: var(--margin-form);
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: #3f4d33;
+}
+
+.description {
+    font-size: 2rem;
+    width: 900px;
+    margin-left: var(--margin-form);
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+legend {
+    font-size: 2rem;
+    margin-left: var(--margin-form);
+    font-weight: 700;
+}
+
+input {
+    outline: none;
+    display: flex;
+    padding: 7.5px;
+    border: 1px solid #d6d6d6;
+    border-radius: 7.5px;
+    width: 250px;
+    font-size: 1em;
+}
+
+label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #42454a;
+    letter-spacing: 0.05rem
+}
+
+input:focus {
+    border: 1px solid #5375d6;
+    box-shadow: 0px 5px 5px #cbcbcb, 0px 0 0 #ffffff;
+}
+
+.closing {
+    margin-left: var(--margin-form);
+}
+
+.closing > span > a {
+    font-weight: 700;
+    color: #596d48;
+    text-decoration: none;
+}
+
+.closing > span > a:hover {
+    color: #3a472f;
+}
+
+input:not(:valid) {
+    border: 1px solid #c13535;
+}
+
+#error-msg-confirm-password {
+    color: red;
+    display: flex;
+}
+
+.logo-banner {
+    display: flex;
+    position: fixed;
+    width: 600px;
+    height: 200px;
+    margin-top: 200px;
+    background-color: rgba(0,0,0,.5);
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 6rem;
+    font-family: "Norse-Bold";
+    overflow: hidden;
+}
+
+.logo {
+    display: flex;
+    position: relative;
+    height: 175px;
+    max-width: 25%;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    color: white;
+    width: 600px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer > a {
+    color: white;
+}
+
+.footer > a:hover {
+    color: rgb(197, 197, 197);
 }
