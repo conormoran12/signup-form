@@ -28,7 +28,6 @@ img {
 .sidebar {
     display: flex;
     flex: 3 0 0;
-    background-color: green;
     overflow: hidden;
     min-width: 600px;
 }
